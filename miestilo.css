@@ -26,6 +26,9 @@ top: 12px;
 .fondotexto1 {
     /* fondoTexto1 */
 
+
+
+
 position: absolute;
 width: 1000px;
 height: 200px;
@@ -37,7 +40,7 @@ border-radius: 20px;
 }
 .fotografia{
     /* fotografia */
-
+  
 
 position: absolute;
 width: 300px;
@@ -45,8 +48,10 @@ height: 300px;
 left: 1129px;
 top: 27px;
 
+
 background: url(/images/fotografia2.png);
 border-radius: 1000px;
+
 }
 
 .contenido{
@@ -63,7 +68,7 @@ border-radius: 1000px;
 
 /* Rectangle 1 */
 
-
+box-shadow: inset 5px 5px 20px 5px #f70f0f;
 position: absolute;
 width: 400px;
 height: 500px;
@@ -71,14 +76,14 @@ left: 60px;
 top: 0px;
 
 background: rgba(255, 255, 255, 0.54);
-border-radius: 20px;
+border-radius: 25px;
 
 
 }
 .tarjetaconsultas{
     /* Rectangle 1 */
 
-
+box-shadow: inset 5px 5px 20px 5px #f70f0f;
 position: absolute;
 width: 400px;
 height: 500px;
@@ -86,7 +91,7 @@ left: 520px;
 top: 0px;
 
 background: rgba(255, 255, 255, 0.54);
-border-radius: 20px;
+border-radius: 25px;
 }
 
 .tarjetaretos{
@@ -100,7 +105,7 @@ left: 977px;
 top: 0px;
 
 background: rgba(255, 255, 255, 0.54);
-border-radius: 20px;
+border-radius: 25px;
 }
 
 
@@ -109,7 +114,7 @@ border-radius: 20px;
 
     position: absolute;
     width: 1317px;
-    height: 98px;
+    height: 96px;
     left: 60px;
     top: 890px;
     
@@ -126,124 +131,13 @@ border-radius: 20px;
     
     background: #000000;}
 
-.icon2{/* Vector */
+    .icon2{/* Vector */
 
 
-    position: absolute;
-    left: 80.96%;
-    right: 6.87%;
-    top: 20px;
-    bottom: 4.98%;
-    
-    background: #4C4C4B;}
-
-
-/* comentarios Ctrl+c+k con ctrl oprimido  - - - - - ::::::: todos los campos aplicados color forma con td / th / etc de las tablas*/
-
-
-table    /* darle color de fondo al fondo de la tabla*/
-{
-    background: red; 
-    font-size: large;
-}
-
-
-td
-{
-        background: rgb(156, 155, 156); 
-        font-size: large; 
-}
-table th
-{
-    background: lawngreen ;
-    font-size: large;
-}
-
-.celda
-{
-    background: rgb(216, 224, 223);
-    font-size: medium;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    border-style: groove; /* para el estilo de las margenes de la tabla*/
-    border-color: yellow;
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    padding-top: 5px;
-}
-
-.tabla1    /* cambiarle el estilo a toda la tabla*/
-{
-    background: rgb(216, 224, 223);
-    font-size: medium;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    border-style: dotted; /* para el estilo de las margenes de la tabla en este caso punteado*/
-    border-color: yellow;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    padding-top: 15px;
-}
-
-
-.alerta
-{
-    background: yellowgreen;
-}
-
-#respuesta    /* estos son los aplicados como id (#)*/
-{
-    background: rgba(255, 0, 242, 0.678);
-    font-size: large;
-}
-
-
-#estadistica td
-{
-    background: yellow;
-    font-size: small;
-}
-#numeros 
-{
-    width: auto;
-    height: auto;
-   
-
-}
-
-#numeros div
-{
-background: blue;
-border-style: double;
-font-size: 24px;
-margin: 15px;
-width: 5%;
-border-radius: 1000px;
-padding: 35px;
-text-align: center;
-}
-
-
-
-section span
-{
-background: grey;
-border-style: medium;
-font-size: 15px;
-margin: 2px;
-border-radius: 25px;
-border-style: dotted;
-border-color: green;
-padding: 35px;
-text-align: center;
-}
-
-span:hover
-{
-    color: black;
-    background: yellow;
-}
+        position: absolute;
+        left: 81.94%;
+        right: 13.26%;
+        top: 20px;
+        bottom: 4.6%;
+        
+        background: #4C4C4B;}
