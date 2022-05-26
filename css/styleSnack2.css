@@ -1,0 +1,1309 @@
+.r-blue {
+    color: #008ce6 !important;
+  }
+  .ltgrey {
+    color: #bebebe !important;
+  }
+  .mdgrey {
+    color: #64696e !important;
+  }
+  .dkgrey {
+    color: #282d32 !important;
+  }
+  .white {
+    color: #fff !important;
+  }
+  .hidden {
+    display: none !important;
+  }
+  .hidden-text {
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  body {
+    position: relative;
+  }
+  .background-scrollover-content::before,
+  .background-scrollover-content::after {
+    display: table;
+    content: ' ';
+  }
+  .background-scrollover-content::after {
+    clear: both;
+  }
+  .content-box {
+    padding: 2em;
+    position: relative;
+    display: block;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+  }
+  .content-box.half-split {
+    width: 50%;
+    float: left;
+    display: block;
+  }
+  @media screen and (max-width: 767px) {
+    .content-box.half-split {
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding-bottom: 2em;
+    }
+    .content-box.half-split .overlay {
+      position: relative;
+      display: block;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      padding: 2em;
+    }
+  }
+  .transitional-text {
+    background: #fff;
+    color: #64696e;
+    text-align: center;
+    padding: 3em 4em;
+  }
+  .transitional-text h3 {
+    letter-spacing: 2px;
+    font-size: 0.875em;
+    line-height: 1.5;
+  }
+  .triangle-cutout {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid #fff;
+    left: 50%;
+    margin-left: -9px;
+    z-index: 1;
+  }
+  .triangle-cutout-cover {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid rgba(0,0,0,0.6);
+    left: 50%;
+    margin-left: -9px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+  }
+  .sidebar-open .triangle-cutout-cover {
+    height: 5em;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  #lightingAnimation {
+    width: 100%;
+    padding: 0;
+    background: #928896;
+    min-height: 650px;
+    height: 100vh;
+  }
+  #lightingAnimation .content-left,
+  #lightingAnimation .content-right {
+    float: left;
+    display: block;
+  }
+  #lightingAnimation .content-left {
+    width: 20%;
+  }
+  #lightingAnimation .content-right {
+    width: 80%;
+    padding: 0 2em;
+  }
+  #lightingAnimation .animation-display {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20%;
+    height: 100%;
+  }
+  #lightingAnimation .animation-navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+  }
+  #lightingAnimation #animationNavigation {
+    list-style: none;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+  }
+  #lightingAnimation #animationNavigation li {
+    width: 100%;
+    height: 16.666666667%;
+    cursor: pointer;
+    color: #fff;
+    padding: 0 1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(40,45,50,0.8);
+    transition: all 100ms ease-in-out;
+  }
+  #lightingAnimation #animationNavigation li:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255,255,255,0);
+    border-left-color: rgba(255,255,255,0);
+    border-width: 18px;
+    margin-top: -18px;
+  }
+  #lightingAnimation #animationNavigation li.active {
+    background: rgba(255,255,255,0.8);
+  }
+  #lightingAnimation #animationNavigation li.active:after {
+    border-left-color: rgba(255,255,255,0.8);
+  }
+  #lightingAnimation #animationNavigation li.active span {
+    color: #231f20;
+  }
+  #lightingAnimation #animationNavigation li.active i svg path,
+  #lightingAnimation #animationNavigation li.active i svg circle,
+  #lightingAnimation #animationNavigation li.active i svg polygon {
+    fill: #008ce6;
+  }
+  #lightingAnimation #animationNavigation li span {
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.875em;
+    margin-top: 8px;
+  }
+  #lightingAnimation #animationNavigation li i {
+    display: inline-block;
+  }
+  #lightingAnimation #animationNavigation li .content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99.9%;
+    font-size: 16px;
+  }
+  @media all and (max-width: 1201px) {
+    #lightingAnimation #animationNavigation li .content {
+      font-size: 15.5px;
+    }
+  }
+  @media all and (max-width: 1025px) {
+    #lightingAnimation #animationNavigation li .content {
+      font-size: 15px;
+    }
+  }
+  @media all and (max-width: 769px) {
+    #lightingAnimation #animationNavigation li .content {
+      font-size: 14.5px;
+    }
+  }
+  #lightingAnimation #animationNavigation li i#scheduleIcon {
+    width: 37px;
+    height: 37px;
+  }
+  #lightingAnimation #animationNavigation li i#daylightIcon {
+    width: 40px;
+    height: 40px;
+  }
+  #lightingAnimation #animationNavigation li i#occupancyIcon {
+    width: 41.3px;
+    height: 40px;
+  }
+  #lightingAnimation #animationNavigation li i#dimmingIcon {
+    width: 40px;
+    height: 20px;
+  }
+  #lightingAnimation #animationNavigation li i#demandResponseIcon {
+    width: 40px;
+    height: 40px;
+  }
+  #lightingAnimation #animationNavigation li i#dimmingControlsIcon {
+    width: 27.8px;
+    height: 40px;
+  }
+  #lightingAnimation #animationNavigation li:hover {
+    background: rgba(255,255,255,0.8);
+  }
+  #lightingAnimation #animationNavigation li:hover:after {
+    border-left-color: rgba(255,255,255,0.8);
+  }
+  #lightingAnimation #animationNavigation li:hover span {
+    color: #231f20;
+  }
+  #lightingAnimation #animationNavigation li:hover i svg path,
+  #lightingAnimation #animationNavigation li:hover i svg circle,
+  #lightingAnimation #animationNavigation li:hover i svg polygon {
+    fill: #008ce6;
+  }
+  .animation-slide {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .animation-slide::before,
+  .animation-slide::after {
+    display: table;
+    content: ' ';
+  }
+  .animation-slide::after {
+    clear: both;
+  }
+  .animation-slide .info-text {
+    position: absolute;
+    opacity: 0;
+    width: 400px;
+    height: auto;
+    top: 3em;
+    left: 4em;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+  }
+  .animation-slide .info-text h6,
+  .animation-slide .info-text p {
+    color: #fff;
+  }
+  .animation-slide .info-text h6 {
+    margin-bottom: 0;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 2.25em;
+    line-height: 1;
+  }
+  .animation-slide .info-text p {
+    font-size: 1.125em;
+    text-rendering: optimizeLegibility;
+    font-smoothing: antialiased;
+    margin-top: 10px;
+  }
+  @media screen and (max-width: 769px) {
+    .animation-slide .info-text {
+      width: 90%;
+      top: 4em;
+    }
+  }
+  .animation-slide #clock {
+    position: absolute;
+    width: 25%;
+    height: auto;
+    bottom: 4em;
+    right: 4em;
+  }
+  .animation-slide #clock h6 {
+    color: #fff;
+    font-size: 2.25em;
+    line-height: 1;
+    margin-bottom: 0;
+    text-align: right;
+  }
+  .outer-animations-container {
+    position: absolute;
+    left: 50%;
+    bottom: -200px;
+    width: 395px;
+    height: 702px;
+    margin-left: -197.5px;
+    transition: all 275ms ease-in-out;
+  }
+  .outer-animations-container .phone-inner-container {
+    position: absolute;
+    width: 247px;
+    height: 417px;
+    overflow: hidden;
+    left: 79px;
+    bottom: 142px;
+  }
+  .outer-animations-container .phone-inner-container img {
+    position: relative;
+    left: 0;
+    transition: all 275ms ease-in-out;
+  }
+  .outer-animations-container #relative-phone {
+    position: relative;
+    width: 395px;
+    height: 702px;
+  }
+  .outer-animations-container #relative-phone .phone {
+    width: 395px;
+    height: 702px;
+    position: absolute;
+  }
+  .outer-animations-container #relative-phone .phone-bg {
+    background-color: #282d32;
+    width: 260px;
+    height: 350px;
+    position: absolute;
+    left: 70px;
+    bottom: 142px;
+  }
+  .animation-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  #animationBackground1,
+  #animationBackground2 {
+    opacity: 0;
+    transition: opacity 205ms ease-in-out;
+  }
+  #animated-display-inner {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .animation-item {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 0.1px;
+    transition: all 275ms ease-in-out;
+  }
+  .animation-item::before {
+    height: 100%;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .animation-item .content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99.9%;
+    font-size: 16px;
+  }
+  @media all and (max-width: 1201px) {
+    .animation-item .content {
+      font-size: 15.5px;
+    }
+  }
+  @media all and (max-width: 1025px) {
+    .animation-item .content {
+      font-size: 15px;
+    }
+  }
+  @media all and (max-width: 769px) {
+    .animation-item .content {
+      font-size: 14.5px;
+    }
+  }
+  .animation-item img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99.9%;
+    max-width: 1280px;
+    font-size: 16px;
+  }
+  @media all and (max-width: 1201px) {
+    .animation-item img {
+      font-size: 15.5px;
+    }
+  }
+  @media all and (max-width: 1025px) {
+    .animation-item img {
+      font-size: 15px;
+    }
+  }
+  @media all and (max-width: 769px) {
+    .animation-item img {
+      font-size: 14.5px;
+    }
+  }
+  .animation-item.main-building {
+    opacity: 1;
+  }
+  .animation-item.street-lights {
+    opacity: 0;
+    -webkit-animation: schedulingTransition1 4s 1;
+            animation: schedulingTransition1 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition1 {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition1 {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animation-item.interior-lights {
+    opacity: 1;
+    -webkit-animation: schedulingTransition2 4s 1;
+            animation: schedulingTransition2 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes schedulingTransition2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animation-item.interior-light-fixtures {
+    opacity: 1;
+  }
+  .animation-item.conference-room {
+    opacity: 0.5;
+    -webkit-animation: schedulingTransition3 4s 1;
+            animation: schedulingTransition3 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition3 {
+    0% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes schedulingTransition3 {
+    0% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animation-item.building-lights {
+    opacity: 0;
+    -webkit-animation: schedulingTransition4 4s 1;
+            animation: schedulingTransition4 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition4 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition4 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animation-item.interior-brightness {
+    opacity: 0;
+    -webkit-animation: schedulingTransition5 4s 1;
+            animation: schedulingTransition5 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition5 {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition5 {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animation-item.exterior-brightness {
+    opacity: 0;
+    -webkit-animation: schedulingTransition6 4s 1;
+            animation: schedulingTransition6 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition6 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition6 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animation-item.car {
+    opacity: 0;
+    transform: translate3D(-50px, 20px, 0px);
+  }
+  .animation-item.flag {
+    opacity: 1;
+  }
+  @media screen and (max-width: 769px) {
+    .animation-item {
+      left: -12%;
+      width: 130%;
+    }
+  }
+  .animationStage1 #animationBackground1 {
+    background: linear-gradient(0deg, #fd9861 0%, #b48b88 25.81%, #2c7494 100%);
+    opacity: 1;
+  }
+  .animationStage1 .animation-slide .info-text.animation-1 {
+    opacity: 1;
+  }
+  .animationStage1 .animation-slide .info-text.animation-2,
+  .animationStage1 .animation-slide .info-text.animation-3,
+  .animationStage1 .animation-slide .info-text.animation-4,
+  .animationStage1 .animation-slide .info-text.animation-5,
+  .animationStage1 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.street-lights {
+    opacity: 0;
+    -webkit-animation: schedulingTransition1 4s 1;
+            animation: schedulingTransition1 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition1 {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition1 {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animationStage1 .animation-item.interior-lights {
+    opacity: 1;
+    -webkit-animation: schedulingTransition2 4s 1;
+            animation: schedulingTransition2 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes schedulingTransition2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .animationStage1 .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.interior-light-fixtures {
+    opacity: 1;
+  }
+  .animationStage1 .animation-item.conference-room {
+    opacity: 0.5;
+    -webkit-animation: schedulingTransition3 4s 1;
+            animation: schedulingTransition3 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition3 {
+    0% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes schedulingTransition3 {
+    0% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  .animationStage1 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage1 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage1 .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.building-lights {
+    opacity: 0;
+    -webkit-animation: schedulingTransition4 4s 1;
+            animation: schedulingTransition4 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition4 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition4 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animationStage1 .animation-item.interior-brightness {
+    opacity: 0;
+    -webkit-animation: schedulingTransition5 4s 1;
+            animation: schedulingTransition5 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition5 {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition5 {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animationStage1 .animation-item.exterior-brightness {
+    opacity: 0;
+    -webkit-animation: schedulingTransition6 4s 1;
+            animation: schedulingTransition6 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition6 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition6 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animationStage1 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage1 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage1 .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage1 .animation-item.car {
+    opacity: 0;
+    transform: translate3D(-50px, 20px, 0px);
+  }
+  .animationStage1 .outer-animations-container {
+    bottom: -702px;
+  }
+  .animationStage1 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage2 #animationBackground2 {
+    background: linear-gradient(0deg, #b18a89 0%, #6886a7 100%);
+    opacity: 1;
+  }
+  .animationStage2 .animation-slide .info-text.animation-2 {
+    opacity: 1;
+  }
+  .animationStage2 .animation-slide .info-text.animation-1,
+  .animationStage2 .animation-slide .info-text.animation-3,
+  .animationStage2 .animation-slide .info-text.animation-4,
+  .animationStage2 .animation-slide .info-text.animation-5,
+  .animationStage2 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.street-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.interior-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.conference-room {
+    opacity: 0.5;
+  }
+  .animationStage2 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage2 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage2 .animation-item.desk-shadows {
+    opacity: 0.4;
+  }
+  .animationStage2 .animation-item.lighter-walls {
+    opacity: 1;
+  }
+  .animationStage2 .animation-item.sunbeam {
+    opacity: 0.8;
+  }
+  .animationStage2 .animation-item.building-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.interior-brightness {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.exterior-brightness {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.daylight-icons {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .animationStage2 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage2 .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage2 .animation-item.car {
+    opacity: 1;
+    transform: translate3D(0px, 0px, 0px);
+  }
+  .animationStage2 .outer-animations-container {
+    bottom: -702px;
+  }
+  .animationStage2 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage3 #animationBackground3 {
+    background: linear-gradient(0deg, #55a0bc 0%, #79acbf 100%);
+    opacity: 1;
+  }
+  .animationStage3 .animation-slide .info-text.animation-3 {
+    opacity: 1;
+  }
+  .animationStage3 .animation-slide .info-text.animation-1,
+  .animationStage3 .animation-slide .info-text.animation-2,
+  .animationStage3 .animation-slide .info-text.animation-4,
+  .animationStage3 .animation-slide .info-text.animation-5,
+  .animationStage3 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.street-lights {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.interior-lights {
+    opacity: 0.7;
+  }
+  .animationStage3 .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.bathroom-lights {
+    opacity: 1;
+  }
+  .animationStage3 .animation-item.conference-room {
+    opacity: 0.5;
+  }
+  .animationStage3 .animation-item.bathroom {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.person {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .animationStage3 .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.building-lights {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.interior-brightness {
+    opacity: 0.1;
+  }
+  .animationStage3 .animation-item.exterior-brightness {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage3 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage3 .animation-item.occupancy-icons {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .animationStage3 .animation-item.car {
+    opacity: 1;
+    transform: translate3D(0px, 0px, 0px);
+  }
+  .animationStage3 .outer-animations-container {
+    bottom: -702px;
+  }
+  .animationStage3 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage4 #animationBackground4 {
+    background: linear-gradient(0deg, #265b83 0%, #4994b1 100%);
+    opacity: 1;
+  }
+  .animationStage4 .animation-slide .info-text.animation-4 {
+    opacity: 1;
+  }
+  .animationStage4 .animation-slide .info-text.animation-1,
+  .animationStage4 .animation-slide .info-text.animation-2,
+  .animationStage4 .animation-slide .info-text.animation-3,
+  .animationStage4 .animation-slide .info-text.animation-5,
+  .animationStage4 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.street-lights {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.interior-lights {
+    opacity: 1;
+  }
+  .animationStage4 .animation-item.conference-lights {
+    opacity: 1;
+  }
+  .animationStage4 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.conference-room {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage4 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage4 .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.building-lights {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.interior-brightness {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.exterior-brightness {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage4 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage4 .animation-item.dimming-icons {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .animationStage4 .animation-item.occupancy-icons {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.car {
+    opacity: 1;
+    transform: translate3D(0px, 0px, 0px);
+  }
+  .animationStage4 .outer-animations-container {
+    bottom: -702px;
+  }
+  .animationStage4 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage5 #animationBackground5 {
+    background: linear-gradient(0deg, #214771 0%, #2c7494 100%);
+    opacity: 1;
+  }
+  .animationStage5 .animation-slide .info-text.animation-5 {
+    opacity: 1;
+  }
+  .animationStage5 .animation-slide .info-text.animation-1,
+  .animationStage5 .animation-slide .info-text.animation-2,
+  .animationStage5 .animation-slide .info-text.animation-3,
+  .animationStage5 .animation-slide .info-text.animation-4,
+  .animationStage5 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.street-lights {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.interior-lights {
+    opacity: 1;
+  }
+  .animationStage5 .animation-item.conference-lights {
+    opacity: 1;
+  }
+  .animationStage5 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.conference-room {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage5 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage5 .animation-item.desk-shadows {
+    opacity: 0.4;
+  }
+  .animationStage5 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.sunbeam {
+    opacity: 0.8;
+  }
+  .animationStage5 .animation-item.building-lights {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.interior-brightness {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.exterior-brightness {
+    opacity: 0.1;
+  }
+  .animationStage5 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage5 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage5 .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage5 .animation-item.car {
+    opacity: 1;
+    transform: translate3D(0px, 0px, 0px);
+  }
+  .animationStage5 .outer-animations-container {
+    bottom: -200px;
+  }
+  .animationStage5 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage6 #animationBackground6 {
+    background: linear-gradient(0deg, #7a825d 0%, #637362 14.16%, #466069 36.05%, #32526d 57.85%, #254a70 79.3%, #214771 100%);
+    opacity: 1;
+  }
+  .animationStage6 .animation-slide .info-text.animation-6 {
+    opacity: 1;
+  }
+  .animationStage6 .animation-slide .info-text.animation-1,
+  .animationStage6 .animation-slide .info-text.animation-2,
+  .animationStage6 .animation-slide .info-text.animation-3,
+  .animationStage6 .animation-slide .info-text.animation-4,
+  .animationStage6 .animation-slide .info-text.animation-5 {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.street-lights {
+    opacity: 0.7;
+  }
+  .animationStage6 .animation-item.interior-lights {
+    opacity: 1;
+  }
+  .animationStage6 .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.conference-room {
+    opacity: 0.6;
+  }
+  .animationStage6 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage6 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage6 .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.building-lights {
+    opacity: 0.2;
+  }
+  .animationStage6 .animation-item.interior-brightness {
+    opacity: 0.1;
+  }
+  .animationStage6 .animation-item.exterior-brightness {
+    opacity: 0.2;
+  }
+  .animationStage6 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage6 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage6 .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage6 .animation-item.car {
+    opacity: 0;
+    transform: translate3D(-50px, 20px, 0px);
+  }
+  .animationStage6 .outer-animations-container {
+    bottom: -200px;
+  }
+  .animationStage6 .outer-animations-container .phone-inner-container img {
+    left: -234px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation {
+    list-style: none;
+    padding: 0;
+    height: 101%;
+    width: 100%;
+    margin: 0;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li {
+    padding-bottom: 40%;
+    float: left;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(40,45,50,0.8);
+    transition: all 100ms ease-in;
+    border: none;
+    overflow: hidden;
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (orientation: landscape) {
+    #phoneAnimationReplacement #phoneAnimationNavigation li {
+      padding-bottom: 23%;
+    }
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active {
+    background: rgba(255,255,255,0.8);
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active:after {
+    border-left-color: rgba(255,255,255,0.8);
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active span {
+    color: #231f20;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active i svg path,
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active i svg circle,
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active i svg polygon {
+    fill: #008ce6;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li span {
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.875em;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i {
+    display: inline-block;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99.9%;
+    font-size: 16px;
+  }
+  @media all and (max-width: 1201px) {
+    #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+      font-size: 15.5px;
+    }
+  }
+  @media all and (max-width: 1025px) {
+    #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+      font-size: 15px;
+    }
+  }
+  @media all and (max-width: 769px) {
+    #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+      font-size: 14.5px;
+    }
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#scheduleIcon {
+    width: 45px;
+    height: 45px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#daylightIcon {
+    width: 40px;
+    height: 40px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#occupancyIcon {
+    width: 41.3px;
+    height: 40px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#dimmingIcon {
+    width: 40px;
+    height: 20px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#demandResponseIcon {
+    width: 40px;
+    height: 40px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#dimmingControlsIcon {
+    width: 27.8px;
+    height: 40px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text {
+    width: 100%;
+    display: none;
+    padding: 1em;
+    height: auto;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text.active {
+    display: block;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text {
+    display: none;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text.active {
+    display: block;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text h6,
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text p {
+    color: #231f20;
+    text-align: left;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text h6 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text p {
+    font-size: 1em;
+  }
+  

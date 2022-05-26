@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.encabezado{
+    background-image: linear-gradient(120deg, rgba(37, 48, 45, 0.452) 0%, rgba(32, 32, 31, 0.692) 100%), url(/images/images.jpg);
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.textos-encabezado{
+    height: 500px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textos-encabezado h1{
+    font-size: 80px;
+}
+
+.textos-encabezado p{
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+/* Estilos generales */
+.contenedor{
+    width: 1000%;
+    max-width: 1000px;
+    overflow: hidden;
+    margin: auto;
+    padding: 0 0 80px 0;
+}
+
+
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "area01 area02 area03"
+    ". . ."
+    ". . .";
+
+    background-image: linear-gradient(120deg, rgba(37, 48, 45, 0.452) 0%, rgba(32, 32, 31, 0.692) 100%), url(/images/images.jpg);
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+
+}
+.container img{
+    display:block;
+    margin:auto;
+    width: 50%;
+    height: 50%;
+
+
+}
+.container li{
+    text-align: justify;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fc000000;
+    
+
+}
+.container h2{
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+
+.area01 { grid-area: area01; }
+
+.area02 { grid-area: area02; }
+
+.area03 { grid-area: area03; }
+
+
+
+
+
+
+
+/* footer */
+
+footer{
+    background: linear-gradient(120deg, rgba(245, 245, 245, 0.699) 0%, rgba(0, 0, 0, 0.692) 100%);
+    color: #fff;
+}
+
+.git{
+    position: absolute;
+    left: 85%;
+    right: 10%;
+
+    width: 70px;
+    height: 70px;
+}
+
+.neocities{
+    position: absolute;
+    left: 90%;
+    right: 5%;
+
+    width: 70px;
+    height: 70px;
+}
+.Titulo{
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    color: #000000;
+}
+.Titulo_Left{
+    font-weight: 300;
+    text-align: celeftnter;
+    margin-bottom: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    color: #050505;
+}
+.Titulo_right{
+    font-weight: 300;
+    text-align: right;
+    margin-bottom: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    color: #ffffff;
+}
+.Creditos{
+    width: 1042px;
+    height: 73px;
+    left: 20%;
+    right: 20%;
+    top: 865px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 21px;
+    text-align: center;
+
+    }
+
+.fcc-btn {
+    background-color: #1940936c;
+    color: white;
+    padding: 1px 10px;
+    text-decoration: none;
+  }
+  .fcc-btn:hover {
+    background-color: #00000094;
+  }
+
+
+
+
+
+ .Menu body{
+    width:100%;
+  }
+  .Menu ul {
+    display: none;
+    position: fixed;
+    right:1em;
+    top:4em;
+    margin:0;
+    padding:0;
+    background-color:rgba(0, 0, 0, 0.164);
+    list-style-type:none;
+  }
+  .Menu li{
+    border-bottom:0px solid cyan;
+  }
+  input:checked + ul {
+    display: block;
+  }
+  
+  input {
+    display: none;
+  }
+ label{
+     
+    position:fixed;
+    right:1em;
+    top:1em;
+    background-color:rgb(0, 0, 0);
+    padding:.5em;
+    color:rgb(255, 255, 255);
+    border-bottom:1px solid rgb(245, 245, 248);
+    cursor:pointer;
+  }

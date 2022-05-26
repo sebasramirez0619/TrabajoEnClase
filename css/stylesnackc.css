@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    --azul:#18caee;
+    --azul2:#b2decd;
+    --rosa:#ee2a65;
+    --amarillo:#ffd50f;
+    --morado:#bfb5df;
+    --amarillo1:#ffe66f;
+   
+    --rosa2:#ffacdb;
+    --rosa1:#ee2a65;
+    --azul1:#a8def5;
+  }
+  body {
+    font-family: 'Handlee','Indie Flower', 'Alata',sans-serif;
+    padding: 10px;
+
+    
+  }
+
+.hero{
+    background-image: linear-gradient(120deg, rgba(168, 222, 245, 0.699) 0%, rgba(19, 55, 126, 0.692) 100%), url("/images/snackconference.jpg");
+    width: 100%;
+    height: 650px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.textos-hero{
+    height: 500px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textos-hero h1{
+    font-size: 60px;
+}
+
+.textos-hero p{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.textos-hero a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 15px;
+    background: #a18cd1;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.svg-hero{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Estilos generales */
+
+.contenedor,
+.wave-contenedor{
+    width: 90%;
+    
+    overflow: hidden;
+    margin: auto;
+    padding: 0 0 80px 0;
+}
+.contenedor{
+    padding: 20px;
+}
+.contenedor table{
+    padding: 20px;
+}
+
+.contenedor h2{
+    font-size: 50px;
+    text-align: center;
+    padding: 30px;
+    
+}
+.contenedor td{
+    width: 25%;
+    padding: 10px;
+    
+}
+
+.contenedor th{
+    font-size: 32px;
+    
+}
+.contenedor tr{
+    font-size: 28px;
+    
+}
+
+
+.titulo{
+    font-weight: 300;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo.left{
+    text-align: left;
+}
+
+.titulo.right{
+    text-align: right;
+}
+
+/* Section */
+
+.website{
+    display: flex;
+    justify-content: space-around;
+}
+
+.website img{
+    width: 30%;
+}
+
+.website .contenedor-textos-main{
+    width: 50%;
+}
+
+.parrafo{
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.cta{
+    display: inline-block;
+    text-decoration: none;
+    background-image: linear-gradient(45deg, var(--rosa) 0%, var(--rosa2) 100%);
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+/* Info */
+
+.info{
+    background: var(--azul1);
+    color: black;
+}
+
+
+
+/* Cards */
+
+.content-cards{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
+    transform: scale(1);
+    transition: transform 0.6s;
+    margin: 10px;
+}
+
+.card:hover{
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.card img{
+width: 90%;
+border-radius: 100%;
+}
+
+.card p{
+    font-weight: 30%;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+/* galeria */
+
+.galeria{
+    background: #f2f2f2;
+}
+
+.galeria-cont{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.galeria-cont>img{
+    width: 30%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* info2 */
+
+.last-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    align-items: center;
+}
+
+.last-section img{
+    width: 48%;
+}
+
+.last-section .contenedor-textos-main{
+    width: 40%;
+    justify-content: center;
+
+}
+
+
+/* footer */
+
+footer{
+    background: var(--morado);
+    color:black;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px ;
+}
+
+.input{
+    font-size: 20px;
+    background: transparent;
+    border: 0;
+    color: black;
+    outline: none;
+    border: 1px  solid black;
+    padding: 20px ;
+}
+
+.input::placeholder{
+    font-size: 20px;
+    color: black;
+    font-family: 'raleway', 'sans-serif';
+}
+
+input[type="text"],input[type="password"]{
+    display: inline-block;
+    width: 45%;
+    margin: 30px;
+}
+
+.form textarea{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="submit"]{
+    display: flex;
+    width: 120px;
+    text-align: center;
+    padding: 14px;
+    justify-content: center;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    color: var(--rosa);
+    background: #fff;
+    
+}
+
+.imagenes{
+    padding-right: 5%;
+     flex-direction: column;
+ }
+ .imagenes  .git{
+     
+     left: 85%;
+     right: 10%;
+     margin-right: 12px;
+     width: 70px;
+     height: 70px;
+   }
+   
+  .imagenes .neocities{
+     
+     left: 90%;
+     right: 5%;
+     margin-left: 12px;
+     width: 70px;
+     height: 70px;
+   }

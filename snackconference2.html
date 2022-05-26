@@ -1,0 +1,1549 @@
+<html lang="en" class=""><head>
+
+    <meta charset="UTF-8">
+    <title>CodePen Demo</title>
+  
+    <meta name="robots" content="noindex">
+  
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <link rel="canonical" href="https://codepen.io/megkadams/pen/EKRwmP">
+    <link rel="stylesheet" href="css/styleSnack2.css">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  
+    <style class="INLINE_PEN_STYLESHEET_ID">
+      .r-blue {
+    color: #008ce6 !important;
+  }
+  .ltgrey {
+    color: #bebebe !important;
+  }
+  .mdgrey {
+    color: #64696e !important;
+  }
+  .dkgrey {
+    color: #282d32 !important;
+  }
+  .white {
+    color: #fff !important;
+  }
+  .hidden {
+    display: none !important;
+  }
+  .hidden-text {
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  body {
+    position: relative;
+  }
+  .background-scrollover-content::before,
+  .background-scrollover-content::after {
+    display: table;
+    content: ' ';
+  }
+  .background-scrollover-content::after {
+    clear: both;
+  }
+  .content-box {
+    padding: 2em;
+    position: relative;
+    display: block;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+  }
+  .content-box.half-split {
+    width: 50%;
+    float: left;
+    display: block;
+  }
+  @media screen and (max-width: 767px) {
+    .content-box.half-split {
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding-bottom: 2em;
+    }
+    .content-box.half-split .overlay {
+      position: relative;
+      display: block;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      padding: 2em;
+    }
+  }
+  .transitional-text {
+    background: #fff;
+    color: #64696e;
+    text-align: center;
+    padding: 3em 4em;
+  }
+  .transitional-text h3 {
+    letter-spacing: 2px;
+    font-size: 0.875em;
+    line-height: 1.5;
+  }
+  .triangle-cutout {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid #fff;
+    left: 50%;
+    margin-left: -9px;
+    z-index: 1;
+  }
+  .triangle-cutout-cover {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid rgba(0,0,0,0.6);
+    left: 50%;
+    margin-left: -9px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+  }
+  .sidebar-open .triangle-cutout-cover {
+    height: 5em;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  #lightingAnimation {
+    width: 100%;
+    padding: 0;
+    background: #928896;
+    min-height: 650px;
+    height: 100vh;
+  }
+  #lightingAnimation .content-left,
+  #lightingAnimation .content-right {
+    float: left;
+    display: block;
+  }
+  #lightingAnimation .content-left {
+    width: 20%;
+  }
+  #lightingAnimation .content-right {
+    width: 80%;
+    padding: 0 2em;
+  }
+  #lightingAnimation .animation-display {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20%;
+    height: 100%;
+  }
+  #lightingAnimation .animation-navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+  }
+  #lightingAnimation #animationNavigation {
+    list-style: none;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+  }
+  #lightingAnimation #animationNavigation li {
+    width: 100%;
+    height: 16.666666667%;
+    cursor: pointer;
+    color: #fff;
+    padding: 0 1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(40,45,50,0.8);
+    transition: all 100ms ease-in-out;
+  }
+  #lightingAnimation #animationNavigation li:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255,255,255,0);
+    border-left-color: rgba(255,255,255,0);
+    border-width: 18px;
+    margin-top: -18px;
+  }
+  #lightingAnimation #animationNavigation li.active {
+    background: rgba(255,255,255,0.8);
+  }
+  #lightingAnimation #animationNavigation li.active:after {
+    border-left-color: rgba(255,255,255,0.8);
+  }
+  #lightingAnimation #animationNavigation li.active span {
+    color: #231f20;
+  }
+  #lightingAnimation #animationNavigation li.active i svg path,
+  #lightingAnimation #animationNavigation li.active i svg circle,
+  #lightingAnimation #animationNavigation li.active i svg polygon {
+    fill: #008ce6;
+  }
+  #lightingAnimation #animationNavigation li span {
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.875em;
+    margin-top: 8px;
+  }
+  #lightingAnimation #animationNavigation li i {
+    display: inline-block;
+  }
+  #lightingAnimation #animationNavigation li .content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99.9%;
+    font-size: 16px;
+  }
+  @media all and (max-width: 1201px) {
+    #lightingAnimation #animationNavigation li .content {
+      font-size: 15.5px;
+    }
+  }
+  @media all and (max-width: 1025px) {
+    #lightingAnimation #animationNavigation li .content {
+      font-size: 15px;
+    }
+  }
+  @media all and (max-width: 769px) {
+    #lightingAnimation #animationNavigation li .content {
+      font-size: 14.5px;
+    }
+  }
+  #lightingAnimation #animationNavigation li i#scheduleIcon {
+    width: 37px;
+    height: 37px;
+  }
+  #lightingAnimation #animationNavigation li i#daylightIcon {
+    width: 40px;
+    height: 40px;
+  }
+  #lightingAnimation #animationNavigation li i#occupancyIcon {
+    width: 41.3px;
+    height: 40px;
+  }
+  #lightingAnimation #animationNavigation li i#dimmingIcon {
+    width: 40px;
+    height: 20px;
+  }
+  #lightingAnimation #animationNavigation li i#demandResponseIcon {
+    width: 40px;
+    height: 40px;
+  }
+  #lightingAnimation #animationNavigation li i#dimmingControlsIcon {
+    width: 27.8px;
+    height: 40px;
+  }
+  #lightingAnimation #animationNavigation li:hover {
+    background: rgba(255,255,255,0.8);
+  }
+  #lightingAnimation #animationNavigation li:hover:after {
+    border-left-color: rgba(255,255,255,0.8);
+  }
+  #lightingAnimation #animationNavigation li:hover span {
+    color: #231f20;
+  }
+  #lightingAnimation #animationNavigation li:hover i svg path,
+  #lightingAnimation #animationNavigation li:hover i svg circle,
+  #lightingAnimation #animationNavigation li:hover i svg polygon {
+    fill: #008ce6;
+  }
+  .animation-slide {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .animation-slide::before,
+  .animation-slide::after {
+    display: table;
+    content: ' ';
+  }
+  .animation-slide::after {
+    clear: both;
+  }
+  .animation-slide .info-text {
+    position: absolute;
+    opacity: 0;
+    width: 400px;
+    height: auto;
+    top: 3em;
+    left: 4em;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+  }
+  .animation-slide .info-text h6,
+  .animation-slide .info-text p {
+    color: #fff;
+  }
+  .animation-slide .info-text h6 {
+    margin-bottom: 0;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 2.25em;
+    line-height: 1;
+  }
+  .animation-slide .info-text p {
+    font-size: 1.125em;
+    text-rendering: optimizeLegibility;
+    font-smoothing: antialiased;
+    margin-top: 10px;
+  }
+  @media screen and (max-width: 769px) {
+    .animation-slide .info-text {
+      width: 90%;
+      top: 4em;
+    }
+  }
+  .animation-slide #clock {
+    position: absolute;
+    width: 25%;
+    height: auto;
+    bottom: 4em;
+    right: 4em;
+  }
+  .animation-slide #clock h6 {
+    color: #fff;
+    font-size: 2.25em;
+    line-height: 1;
+    margin-bottom: 0;
+    text-align: right;
+  }
+  .outer-animations-container {
+    position: absolute;
+    left: 50%;
+    bottom: -200px;
+    width: 395px;
+    height: 702px;
+    margin-left: -197.5px;
+    transition: all 275ms ease-in-out;
+  }
+  .outer-animations-container .phone-inner-container {
+    position: absolute;
+    width: 247px;
+    height: 417px;
+    overflow: hidden;
+    left: 79px;
+    bottom: 142px;
+  }
+  .outer-animations-container .phone-inner-container img {
+    position: relative;
+    left: 0;
+    transition: all 275ms ease-in-out;
+  }
+  .outer-animations-container #relative-phone {
+    position: relative;
+    width: 395px;
+    height: 702px;
+  }
+  .outer-animations-container #relative-phone .phone {
+    width: 395px;
+    height: 702px;
+    position: absolute;
+  }
+  .outer-animations-container #relative-phone .phone-bg {
+    background-color: #282d32;
+    width: 260px;
+    height: 350px;
+    position: absolute;
+    left: 70px;
+    bottom: 142px;
+  }
+  .animation-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  #animationBackground1,
+  #animationBackground2 {
+    opacity: 0;
+    transition: opacity 205ms ease-in-out;
+  }
+  #animated-display-inner {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .animation-item {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 0.1px;
+    transition: all 275ms ease-in-out;
+  }
+  .animation-item::before {
+    height: 100%;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .animation-item .content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99.9%;
+    font-size: 16px;
+  }
+  @media all and (max-width: 1201px) {
+    .animation-item .content {
+      font-size: 15.5px;
+    }
+  }
+  @media all and (max-width: 1025px) {
+    .animation-item .content {
+      font-size: 15px;
+    }
+  }
+  @media all and (max-width: 769px) {
+    .animation-item .content {
+      font-size: 14.5px;
+    }
+  }
+  .animation-item img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99.9%;
+    max-width: 1280px;
+    font-size: 16px;
+  }
+  @media all and (max-width: 1201px) {
+    .animation-item img {
+      font-size: 15.5px;
+    }
+  }
+  @media all and (max-width: 1025px) {
+    .animation-item img {
+      font-size: 15px;
+    }
+  }
+  @media all and (max-width: 769px) {
+    .animation-item img {
+      font-size: 14.5px;
+    }
+  }
+  .animation-item.main-building {
+    opacity: 1;
+  }
+  .animation-item.street-lights {
+    opacity: 0;
+    -webkit-animation: schedulingTransition1 4s 1;
+            animation: schedulingTransition1 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition1 {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition1 {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animation-item.interior-lights {
+    opacity: 1;
+    -webkit-animation: schedulingTransition2 4s 1;
+            animation: schedulingTransition2 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes schedulingTransition2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animation-item.interior-light-fixtures {
+    opacity: 1;
+  }
+  .animation-item.conference-room {
+    opacity: 0.5;
+    -webkit-animation: schedulingTransition3 4s 1;
+            animation: schedulingTransition3 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition3 {
+    0% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes schedulingTransition3 {
+    0% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animation-item.building-lights {
+    opacity: 0;
+    -webkit-animation: schedulingTransition4 4s 1;
+            animation: schedulingTransition4 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition4 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition4 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animation-item.interior-brightness {
+    opacity: 0;
+    -webkit-animation: schedulingTransition5 4s 1;
+            animation: schedulingTransition5 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition5 {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition5 {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animation-item.exterior-brightness {
+    opacity: 0;
+    -webkit-animation: schedulingTransition6 4s 1;
+            animation: schedulingTransition6 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition6 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition6 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animation-item.car {
+    opacity: 0;
+    transform: translate3D(-50px, 20px, 0px);
+  }
+  .animation-item.flag {
+    opacity: 1;
+  }
+  @media screen and (max-width: 769px) {
+    .animation-item {
+      left: -12%;
+      width: 130%;
+    }
+  }
+  .animationStage1 #animationBackground1 {
+    background: linear-gradient(0deg, #fd9861 0%, #b48b88 25.81%, #2c7494 100%);
+    opacity: 1;
+  }
+  .animationStage1 .animation-slide .info-text.animation-1 {
+    opacity: 1;
+  }
+  .animationStage1 .animation-slide .info-text.animation-2,
+  .animationStage1 .animation-slide .info-text.animation-3,
+  .animationStage1 .animation-slide .info-text.animation-4,
+  .animationStage1 .animation-slide .info-text.animation-5,
+  .animationStage1 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.street-lights {
+    opacity: 0;
+    -webkit-animation: schedulingTransition1 4s 1;
+            animation: schedulingTransition1 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition1 {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition1 {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animationStage1 .animation-item.interior-lights {
+    opacity: 1;
+    -webkit-animation: schedulingTransition2 4s 1;
+            animation: schedulingTransition2 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes schedulingTransition2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .animationStage1 .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.interior-light-fixtures {
+    opacity: 1;
+  }
+  .animationStage1 .animation-item.conference-room {
+    opacity: 0.5;
+    -webkit-animation: schedulingTransition3 4s 1;
+            animation: schedulingTransition3 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition3 {
+    0% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes schedulingTransition3 {
+    0% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  .animationStage1 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage1 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage1 .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animationStage1 .animation-item.building-lights {
+    opacity: 0;
+    -webkit-animation: schedulingTransition4 4s 1;
+            animation: schedulingTransition4 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition4 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition4 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animationStage1 .animation-item.interior-brightness {
+    opacity: 0;
+    -webkit-animation: schedulingTransition5 4s 1;
+            animation: schedulingTransition5 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition5 {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition5 {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animationStage1 .animation-item.exterior-brightness {
+    opacity: 0;
+    -webkit-animation: schedulingTransition6 4s 1;
+            animation: schedulingTransition6 4s 1;
+  }
+  @-webkit-keyframes schedulingTransition6 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes schedulingTransition6 {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .animationStage1 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage1 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage1 .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage1 .animation-item.car {
+    opacity: 0;
+    transform: translate3D(-50px, 20px, 0px);
+  }
+  .animationStage1 .outer-animations-container {
+    bottom: -702px;
+  }
+  .animationStage1 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage2 #animationBackground2 {
+    background: linear-gradient(0deg, #b18a89 0%, #6886a7 100%);
+    opacity: 1;
+  }
+  .animationStage2 .animation-slide .info-text.animation-2 {
+    opacity: 1;
+  }
+  .animationStage2 .animation-slide .info-text.animation-1,
+  .animationStage2 .animation-slide .info-text.animation-3,
+  .animationStage2 .animation-slide .info-text.animation-4,
+  .animationStage2 .animation-slide .info-text.animation-5,
+  .animationStage2 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.street-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.interior-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.conference-room {
+    opacity: 0.5;
+  }
+  .animationStage2 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage2 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage2 .animation-item.desk-shadows {
+    opacity: 0.4;
+  }
+  .animationStage2 .animation-item.lighter-walls {
+    opacity: 1;
+  }
+  .animationStage2 .animation-item.sunbeam {
+    opacity: 0.8;
+  }
+  .animationStage2 .animation-item.building-lights {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.interior-brightness {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.exterior-brightness {
+    opacity: 0;
+  }
+  .animationStage2 .animation-item.daylight-icons {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .animationStage2 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage2 .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage2 .animation-item.car {
+    opacity: 1;
+    transform: translate3D(0px, 0px, 0px);
+  }
+  .animationStage2 .outer-animations-container {
+    bottom: -702px;
+  }
+  .animationStage2 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage3 #animationBackground3 {
+    background: linear-gradient(0deg, #55a0bc 0%, #79acbf 100%);
+    opacity: 1;
+  }
+  .animationStage3 .animation-slide .info-text.animation-3 {
+    opacity: 1;
+  }
+  .animationStage3 .animation-slide .info-text.animation-1,
+  .animationStage3 .animation-slide .info-text.animation-2,
+  .animationStage3 .animation-slide .info-text.animation-4,
+  .animationStage3 .animation-slide .info-text.animation-5,
+  .animationStage3 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.street-lights {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.interior-lights {
+    opacity: 0.7;
+  }
+  .animationStage3 .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.bathroom-lights {
+    opacity: 1;
+  }
+  .animationStage3 .animation-item.conference-room {
+    opacity: 0.5;
+  }
+  .animationStage3 .animation-item.bathroom {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.person {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .animationStage3 .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.building-lights {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.interior-brightness {
+    opacity: 0.1;
+  }
+  .animationStage3 .animation-item.exterior-brightness {
+    opacity: 0;
+  }
+  .animationStage3 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage3 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage3 .animation-item.occupancy-icons {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .animationStage3 .animation-item.car {
+    opacity: 1;
+    transform: translate3D(0px, 0px, 0px);
+  }
+  .animationStage3 .outer-animations-container {
+    bottom: -702px;
+  }
+  .animationStage3 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage4 #animationBackground4 {
+    background: linear-gradient(0deg, #265b83 0%, #4994b1 100%);
+    opacity: 1;
+  }
+  .animationStage4 .animation-slide .info-text.animation-4 {
+    opacity: 1;
+  }
+  .animationStage4 .animation-slide .info-text.animation-1,
+  .animationStage4 .animation-slide .info-text.animation-2,
+  .animationStage4 .animation-slide .info-text.animation-3,
+  .animationStage4 .animation-slide .info-text.animation-5,
+  .animationStage4 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.street-lights {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.interior-lights {
+    opacity: 1;
+  }
+  .animationStage4 .animation-item.conference-lights {
+    opacity: 1;
+  }
+  .animationStage4 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.conference-room {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage4 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage4 .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.building-lights {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.interior-brightness {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.exterior-brightness {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage4 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage4 .animation-item.dimming-icons {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .animationStage4 .animation-item.occupancy-icons {
+    opacity: 0;
+  }
+  .animationStage4 .animation-item.car {
+    opacity: 1;
+    transform: translate3D(0px, 0px, 0px);
+  }
+  .animationStage4 .outer-animations-container {
+    bottom: -702px;
+  }
+  .animationStage4 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage5 #animationBackground5 {
+    background: linear-gradient(0deg, #214771 0%, #2c7494 100%);
+    opacity: 1;
+  }
+  .animationStage5 .animation-slide .info-text.animation-5 {
+    opacity: 1;
+  }
+  .animationStage5 .animation-slide .info-text.animation-1,
+  .animationStage5 .animation-slide .info-text.animation-2,
+  .animationStage5 .animation-slide .info-text.animation-3,
+  .animationStage5 .animation-slide .info-text.animation-4,
+  .animationStage5 .animation-slide .info-text.animation-6 {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.street-lights {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.interior-lights {
+    opacity: 1;
+  }
+  .animationStage5 .animation-item.conference-lights {
+    opacity: 1;
+  }
+  .animationStage5 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.conference-room {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage5 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage5 .animation-item.desk-shadows {
+    opacity: 0.4;
+  }
+  .animationStage5 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.sunbeam {
+    opacity: 0.8;
+  }
+  .animationStage5 .animation-item.building-lights {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.interior-brightness {
+    opacity: 0;
+  }
+  .animationStage5 .animation-item.exterior-brightness {
+    opacity: 0.1;
+  }
+  .animationStage5 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage5 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage5 .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage5 .animation-item.car {
+    opacity: 1;
+    transform: translate3D(0px, 0px, 0px);
+  }
+  .animationStage5 .outer-animations-container {
+    bottom: -200px;
+  }
+  .animationStage5 .outer-animations-container .phone-inner-container img {
+    left: 0;
+  }
+  .animationStage6 #animationBackground6 {
+    background: linear-gradient(0deg, #7a825d 0%, #637362 14.16%, #466069 36.05%, #32526d 57.85%, #254a70 79.3%, #214771 100%);
+    opacity: 1;
+  }
+  .animationStage6 .animation-slide .info-text.animation-6 {
+    opacity: 1;
+  }
+  .animationStage6 .animation-slide .info-text.animation-1,
+  .animationStage6 .animation-slide .info-text.animation-2,
+  .animationStage6 .animation-slide .info-text.animation-3,
+  .animationStage6 .animation-slide .info-text.animation-4,
+  .animationStage6 .animation-slide .info-text.animation-5 {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.street-lights {
+    opacity: 0.7;
+  }
+  .animationStage6 .animation-item.interior-lights {
+    opacity: 1;
+  }
+  .animationStage6 .animation-item.conference-lights {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.bathroom-lights {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.conference-room {
+    opacity: 0.6;
+  }
+  .animationStage6 .animation-item.bathroom {
+    opacity: 0.8;
+  }
+  .animationStage6 .animation-item.person {
+    opacity: 0;
+    transform: translate3d(7px, 7px, 0px);
+  }
+  .animationStage6 .animation-item.desk-shadows {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.lighter-walls {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.sunbeam {
+    opacity: 0;
+  }
+  .animationStage6 .animation-item.building-lights {
+    opacity: 0.2;
+  }
+  .animationStage6 .animation-item.interior-brightness {
+    opacity: 0.1;
+  }
+  .animationStage6 .animation-item.exterior-brightness {
+    opacity: 0.2;
+  }
+  .animationStage6 .animation-item.daylight-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage6 .animation-item.dimming-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage6 .animation-item.occupancy-icons {
+    opacity: 0;
+    transform: translate3d(0px, -5px, 0px);
+  }
+  .animationStage6 .animation-item.car {
+    opacity: 0;
+    transform: translate3D(-50px, 20px, 0px);
+  }
+  .animationStage6 .outer-animations-container {
+    bottom: -200px;
+  }
+  .animationStage6 .outer-animations-container .phone-inner-container img {
+    left: -234px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation {
+    list-style: none;
+    padding: 0;
+    height: 101%;
+    width: 100%;
+    margin: 0;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li {
+    padding-bottom: 40%;
+    float: left;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(40,45,50,0.8);
+    transition: all 100ms ease-in;
+    border: none;
+    overflow: hidden;
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (orientation: landscape) {
+    #phoneAnimationReplacement #phoneAnimationNavigation li {
+      padding-bottom: 23%;
+    }
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active {
+    background: rgba(255,255,255,0.8);
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active:after {
+    border-left-color: rgba(255,255,255,0.8);
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active span {
+    color: #231f20;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active i svg path,
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active i svg circle,
+  #phoneAnimationReplacement #phoneAnimationNavigation li.active i svg polygon {
+    fill: #008ce6;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li span {
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.875em;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i {
+    display: inline-block;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99.9%;
+    font-size: 16px;
+  }
+  @media all and (max-width: 1201px) {
+    #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+      font-size: 15.5px;
+    }
+  }
+  @media all and (max-width: 1025px) {
+    #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+      font-size: 15px;
+    }
+  }
+  @media all and (max-width: 769px) {
+    #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+      font-size: 14.5px;
+    }
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#scheduleIcon {
+    width: 45px;
+    height: 45px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#daylightIcon {
+    width: 40px;
+    height: 40px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#occupancyIcon {
+    width: 41.3px;
+    height: 40px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#dimmingIcon {
+    width: 40px;
+    height: 20px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#demandResponseIcon {
+    width: 40px;
+    height: 40px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li i#dimmingControlsIcon {
+    width: 27.8px;
+    height: 40px;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li .content {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text {
+    width: 100%;
+    display: none;
+    padding: 1em;
+    height: auto;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text.active {
+    display: block;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text {
+    display: none;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text.active {
+    display: block;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text h6,
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text p {
+    color: #231f20;
+    text-align: left;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text h6 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  #phoneAnimationReplacement #phoneAnimationNavigation li.description-text .individual-descriptor-text p {
+    font-size: 1em;
+  }
+  
+    </style>
+  
+    
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-7549a40147ccd0ba0a6b5373d87e770e49bb4689f1c2dc30cccc7463f207f997.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+  </head>
+  
+  <body>
+    <article id="lightingAnimation" class="content-box animationStage1">
+      <div id="animationBackground1" class="animation-background"></div>
+      <div id="animationBackground2" class="animation-background"></div>
+      <div id="animationBackground3" class="animation-background"></div>
+      <div id="animationBackground4" class="animation-background"></div>
+      <div id="animationBackground5" class="animation-background"></div>
+      <div id="animationBackground6" class="animation-background"></div>
+      <div class="triangle-cutout"></div>
+      <div class="triangle-cutout-cover"></div>
+      <div class="content-right animation-display">
+          <div id="animated-display-inner">
+            <div class="animation-slide">
+              <div class="animation-item main-building">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/main_iso-01.png" alt="">
+              </div>
+  
+              <div class="animation-item street-lights">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/street_lights-01.png" alt="">
+              </div>
+              
+              <div class="animation-item interior-lights">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/bathroom_lights-01.png" alt="">
+              </div>
+              
+              <div class="animation-item interior-lights">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/front_left_lights-01.png" alt="">
+              </div>
+              
+              <div class="animation-item interior-lights">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/front_right_lights-01.png" alt="">
+              </div>
+              
+              <div class="animation-item conference-lights">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/conference_lights-01.png" alt="">
+              </div>
+              
+              <div class="animation-item bathroom-lights">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/bathroom_lights-01.png" alt="">
+              </div>
+              
+              <div class="animation-item interior-light-fixtures">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/light_fixtures-01.png" alt="">
+              </div>
+              
+              <div class="animation-item conference-room">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/conference_brightness-01.png" alt="">
+              </div>
+              
+              <div class="animation-item bathroom">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/bathroom_brightness-01.png" alt="">
+              </div>
+  
+              <div class="animation-item person">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/bathroom_guy-01.png" alt="">
+              </div>
+  
+              <div class="animation-item desk-shadows">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/desk_shadows-01.png" alt="">
+              </div>
+  
+              <div class="animation-item lighter-walls">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/lighter_walls-01.png" alt="">
+              </div>
+  
+              <div class="animation-item sunbeam">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/sunbeam-01.png" alt="">
+              </div>
+              
+              <div class="animation-item building-lights">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/building_lights-01.png" alt="">
+              </div>
+  
+              <div class="animation-item interior-brightness">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/interior_brightness-01.png" alt="">
+              </div>
+              
+              <div class="animation-item exterior-brightness">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/exterior_brightness-01.png" alt="">
+              </div>
+  
+              <div class="animation-item daylight-icons">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/daylight-icons-01.png" alt="">
+              </div>
+  
+              <div class="animation-item dimming-icons">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/dimming-icon-01.png" alt="">
+              </div>
+  
+              <div class="animation-item occupancy-icons">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/occupancy-icon-01.png" alt="">
+              </div>
+  
+              <div class="animation-item car">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/car-01.png" alt="">
+              </div>
+              <div class="animation-item flag">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/flag-01.png" alt="">
+              </div>
+  
+              <div class="info-text animation-1 active-text">
+                <div class="scheduling-text">
+                  <i></i>
+                  <h6>Presentacion por:</h6>
+                </div>
+            <p>Sebastian Ramirez Ramirez, Estudiante Ingeneria sistemas IUE 2022</p>   
+            </div>
+              <div class="info-text animation-2">
+                <div class="daylight-text">
+                  <i></i>
+                  <h6>Ingeniero Juan Jose M</h6>
+                </div>
+                <p>Especialista en domotizacion Iot y luminicas inteligentes</p>>          </div>
+              <div class="indicator-bubble-group">
+                <i class="indicator-bubble daylight front"></i>
+                <i class="indicator-bubble daylight back-left"></i>
+                <i class="indicator-bubble daylight back-right"></i>
+              </div>
+              <div class="info-text animation-3">
+                <div class="occupancy-text">
+                  <i></i>
+                  <h6>Distribucion de espacios e interiores</h6>
+                </div>
+              <p>Conferencia dictada por Sebastian Ramirez Ramirez</p>>     </div>
+              <div class="indicator-bubble-group">
+                <i class="indicator-bubble occupancy"></i>
+              </div>
+              <div class="info-text animation-4">
+                <div class="dimming-text">
+                  <i></i>
+                  <h6>CEO</h6>
+                </div>
+              <p>Como ser exitosos en la indsutria por Juan Caballero Pelao</p>>      </div>
+              <div class="indicator-bubble-group">
+                <i class="indicator-bubble dimming"></i>
+              </div>
+              <div class="info-text animation-5">
+                <div class="demand-text">
+                  <i></i>
+                  <h6>Conectados a la red</h6>
+                </div>
+           <p> Estar en linea y en conexion de la infraestructura por Sebastian Ramirez Ramirez</p>>       </div>
+              <div class="info-text animation-6">
+                <div class="personal-controls-text">
+                  <i></i>
+                  <h6>Contactenos</h6>
+                </div>
+            <p>Nuestros numero de comunicacion cel, 3017714818</p>    
+            </div>
+  
+              <div id="clock">
+              <h6 id="clock-time">06:00pm</h6>
+              </div>
+              <div class="outer-animations-container">
+                  <div id="relative-phone">
+                  <div class="phone-bg"></div>
+                  <div class="phone-inner-container">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/phone_screens.png" alt="">
+                  </div>
+                  <div class="phone">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/136620/phone.png" alt="">
+                  </div>
+                </div>
+            </div>
+            </div> <!--Close animation slide -->
+          </div> <!--Close animated display inner -->
+      </div> <!--Close content right -->
+      <div class="content-left animation-navigation">
+          <ol id="animationNavigation">
+          <li class="active" id="schedule">
+              <div class="content">
+                <i id="scheduleIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" enable-background="new 0 0 45 45"><g fill="#fff"><path d="M22.5 45c-12.4 0-22.5-9.9-22.5-22 0-2.3.4-4.6 1.1-6.9.4-1.1 1.6-1.7 2.7-1.3 1.1.4 1.7 1.5 1.4 2.6-.6 1.8-.9 3.7-.9 5.6 0 9.9 8.2 17.9 18.3 17.9 10.1 0 18.3-8 18.3-17.9s-8.3-17.9-18.4-17.9c-4.5 0-8.9 1.6-12.2 4.6-.9.8-2.2.7-3-.2-.8-.8-.7-2.1.1-2.9 4.2-3.6 9.5-5.6 15.1-5.6 12.4 0 22.5 9.8 22.5 22 0 12.1-10.1 22-22.5 22zM20.5 30.9c-.4 0-.8-.1-1.1-.3-.6-.4-1-1-1-1.7v-12.3c0-1.1.9-2.1 2.1-2.1 1.2 0 2.1.9 2.1 2.1v8.9l4.3-2c1.1-.5 2.3 0 2.8 1s0 2.3-1 2.8l-7.4 3.3c-.2.2-.5.3-.8.3zM14.4 12.3h-.4l-6.8-1.3c-1.1-.2-1.9-1.3-1.7-2.4l1.1-6.9c.2-1.1 1.3-1.9 2.5-1.7 1.2.2 1.9 1.2 1.8 2.4l-.8 4.9 4.7.9c1.2.2 1.9 1.3 1.7 2.4-.2 1-1.1 1.7-2.1 1.7z"></path></g></svg></i>
+                <span>Presentacion de vivienda</span>
+              </div>
+          </li>
+          <li id="daylight">
+              <div class="content">
+                   <i id="daylightIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" enable-background="new 0 0 40 40"><g fill="#fff"><path d="M20 9.5c-.9 0-1.6-.7-1.6-1.6v-6.3c0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6v6.3c0 .9-.7 1.6-1.6 1.6zM20 40c-.9 0-1.6-.7-1.6-1.6v-6.3c0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6v6.3c0 .9-.7 1.6-1.6 1.6zM11.4 13.1c-.4 0-.8-.2-1.1-.5l-4.4-4.5c-.6-.6-.6-1.7 0-2.3s1.7-.6 2.3 0l4.4 4.4c.6.6.6 1.7 0 2.3-.3.4-.8.6-1.2.6zM33 34.6c-.4 0-.8-.2-1.1-.5l-4.4-4.4c-.6-.6-.6-1.7 0-2.3.6-.6 1.7-.6 2.3 0l4.4 4.4c.6.6.6 1.7 0 2.3-.4.4-.8.5-1.2.5zM7.9 21.6h-6.3c-.9 0-1.6-.7-1.6-1.6s.7-1.6 1.6-1.6h6.3c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6zM38.4 21.6h-6.3c-.9 0-1.6-.7-1.6-1.6s.7-1.6 1.6-1.6h6.3c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6zM7 34.6c-.4 0-.8-.2-1.1-.5-.6-.6-.6-1.7 0-2.3l4.4-4.4c.6-.6 1.7-.6 2.3 0 .6.6.6 1.7 0 2.3l-4.4 4.4c-.4.4-.8.5-1.2.5zM28.6 13.1c-.4 0-.8-.2-1.1-.5-.6-.6-.6-1.7 0-2.3l4.4-4.4c.6-.6 1.7-.6 2.3 0 .6.6.6 1.7 0 2.3l-4.4 4.4c-.4.3-.8.5-1.2.5zM20.1 28.1c-4.6 0-8.3-3.7-8.3-8.3s3.7-8.3 8.3-8.3c4.6 0 8.3 3.7 8.3 8.3s-3.7 8.3-8.3 8.3zm0-13.4c-2.8 0-5.1 2.3-5.1 5.1s2.3 5.1 5.1 5.1 5.1-2.3 5.1-5.1-2.3-5.1-5.1-5.1z"></path></g></svg></i>
+                   <span>Luces internas</span>
+                 </div>
+          </li>
+          <li id="occupancy">
+              <div class="content">
+                <i id="occupancyIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.3 40" enable-background="new 0 0 41.3 40"><g fill="#fff"><circle cx="21.4" cy="5.5" r="2.2"></circle><path d="M19.5 24.9l.5-2.5 2.8 2.6 1.4 5.5c.1.5.6.9 1.2.9h.3c.6-.2 1-.8.9-1.4l-1.6-5.9c-.1-.2-.2-.4-.4-.6l-4.2-3.8 1.2-6.5 2.3 3.5c.4.5 1.1.7 1.6.3l2.9-1.9c.6-.4.7-1.1.4-1.7-.4-.6-1.1-.7-1.7-.4l-1.9 1.2-3.1-4.7c-.4-.5-1.1-.7-1.7-.3l-5.4 3.5c-.2.2-.4.4-.5.7l-1.5 4.9c0 .7.4 1.4 1 1.5l.3.1c.5 0 1-.3 1.1-.9l1.3-4.4 2.4-1.6-2.1 11.2-4.6 6.8c-.4.5-.2 1.3.3 1.7.2.1.4.2.7.2.4 0 .8-.2 1-.5l4.9-7 .2-.5zM26.8 25c.2.1.4.2.7.2.4 0 .8-.2 1-.5 1.1-1.7 1.7-3.6 1.7-5.6 0-.4 0-.7-.1-1-.1-.7-.7-1.1-1.3-1.1-.7.1-1.1.7-1.1 1.3v.8c0 1.5-.5 3-1.3 4.3-.2.5-.1 1.2.4 1.6zM27.4 5.3c-.6-.3-1.3-.1-1.6.5-.3.6-.1 1.3.5 1.6 4.4 2.3 7.1 6.7 7.1 11.6 0 3.3-1.2 6.5-3.5 8.9-.4.5-.4 1.2.1 1.7.2.2.5.3.8.3.3 0 .6-.1.9-.4 2.7-2.9 4.1-6.6 4.1-10.5 0-5.7-3.2-11-8.4-13.7zM29.3.1c-.6-.3-1.3 0-1.6.6-.3.6 0 1.3.6 1.6 6.4 3.1 10.6 9.7 10.6 16.8 0 4.7-1.7 9.2-4.9 12.6-.4.5-.4 1.2.1 1.7.2.2.5.3.8.3.3 0 .6-.1.9-.4 3.6-3.9 5.6-8.9 5.6-14.2-.1-8.1-4.8-15.5-12.1-19zM13.5 25.2c.3 0 .6-.1.8-.4.5-.5.5-1.2 0-1.7l-12.3-12.3c-.5-.5-1.2-.5-1.7 0s-.5 1.2 0 1.7l12.3 12.3c.3.3.6.4.9.4zM20.7 29.5c-.5-.5-1.2-.5-1.7 0s-.5 1.2 0 1.7l8.5 8.5c.2.2.5.4.8.4s.6-.1.8-.4c.5-.5.5-1.2 0-1.7l-8.4-8.5z"></path></g></svg></i>
+                <span>Distribucion y espacios</span>
+              </div>
+          </li>
+          <li id="dimming">
+              <div class="content">
+                <i id="dimmingIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 20.1" enable-background="new 0 0 40 20.1"><g fill="#fff"><path d="M38.3 20.1h-36.6c-.8 0-1.5-.6-1.7-1.4-.2-.8.2-1.6 1-2l36.5-16.5c.5-.2 1.2-.2 1.7.1.5.3.8.9.8 1.4v16.7c0 1-.8 1.7-1.7 1.7zm-28.6-3.4h26.8v-12.3l-26.8 12.3zM2.5 18.4l25.8-12.2v12.2z"></path></g></svg></i>
+                <span>Operaciones de balance</span>
+              </div>
+          </li>
+          <li id="demandResponse">
+              <div class="content">
+                <i id="demandResponseIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" enable-background="new 0 0 40 40"><g fill="#fff"><path d="M10.6 40c-.3 0-.6-.1-.7-.4-.3-.4-.2-1 .2-1.3l16.1-11.8c.4-.3 1-.2 1.3.2.3.4.2 1-.2 1.3l-16.2 11.8c-.2.1-.4.2-.5.2zM28.5 39.5c-.2 0-.4-.1-.5-.2l-15.1-11c-.4-.3-.5-.9-.2-1.3s.9-.5 1.3-.2l15.1 11c.4.3.5.9.2 1.3-.3.3-.6.4-.8.4zM13 27.8c-.3 0-.6-.1-.7-.4-.3-.4-.2-1 .2-1.3l11.9-8.6c.4-.3 1-.2 1.3.2.3.4.2 1-.2 1.3l-11.9 8.6c-.2.2-.4.2-.6.2zM26.7 27.6c-.2 0-.3 0-.5-.1l-12.2-7.7c-.4-.3-.5-.8-.3-1.2.3-.4.8-.5 1.2-.3l12.2 7.7c.4.3.5.8.3 1.2-.1.3-.4.4-.7.4zM14.5 19.9c-.3 0-.5-.1-.7-.3-.3-.4-.3-.9.1-1.3l9.2-7.9c.4-.3.9-.3 1.3.1.3.4.3.9-.1 1.3l-9.2 7.9c-.2.2-.4.2-.6.2zM25.2 19.7c-.2 0-.4-.1-.6-.2l-9-7.5c-.4-.3-.4-.9-.1-1.3.3-.4.9-.4 1.3-.1l9 7.5c.4.3.4.9.1 1.3-.2.2-.4.3-.7.3zM10.6 40h-.2c-.5-.1-.8-.6-.7-1l5.4-30c0-.1 0-.2.1-.2l3.9-7.8c.2-.3.5-.5.8-.5.3 0 .7.2.8.5l3.9 8c0 .1.1.2.1.2l5 29.4c.1.5-.2 1-.7 1-.5.1-1-.2-1-.7l-5-29.3-3.1-6.3-3.1 6-5.4 29.8c0 .6-.4.9-.8.9zM16.3 11.4c-.3 0-.7-.2-.8-.5-.2-.4 0-1 .4-1.2l1.9-.9-7.4-3.8c-.4-.2-.5-.5-.5-.9s.3-.7.6-.8l9-3.3h.6l9.5 3.3c.3.1.6.4.6.8s-.2.7-.5.9l-7.8 3.8 1.7.9c.4.2.6.8.4 1.2-.2.4-.8.6-1.2.4l-3-1.5-3.1 1.5c-.1.1-.3.1-.4.1zm-3.3-7.1l6.8 3.5 7.1-3.5-7.1-2.5-6.8 2.5zM29.1 9.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.6 1.5-1.5 1.5zm0-2.2c-.3 0-.6.3-.6.6s.3.6.6.6.6-.3.6-.6c.1-.3-.2-.6-.6-.6zM29.3 6.9c-.2 0-.5-.2-.5-.5v-1.8c0-.2.2-.5.5-.5.2 0 .5.2.5.5v1.8c-.1.3-.3.5-.5.5zM10.7 9.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm0-2.2c-.3 0-.6.3-.6.6s.3.6.6.6.6-.3.6-.6-.3-.6-.6-.6zM10.8 6.9c-.2 0-.5-.2-.5-.5v-1.8c0-.2.2-.5.5-.5.2 0 .5.2.5.5v1.8c-.1.3-.3.5-.5.5zM5.2 13.7c-1.5 0-3.1-.9-4.6-2.6-.2-.2-.2-.5 0-.7s.5-.2.7 0c1.5 1.7 3 2.5 4.5 2.2 2.7-.5 4.3-4.4 4.3-4.4l.1-.2h.3c.4 0 .5.2.9.9.4.8 1.1 2.1 1.8 2.7.2.2.2.5 0 .7-.2.2-.5.2-.7 0-.8-.7-1.5-2-1.9-2.9-.7 1.3-2.2 3.7-4.6 4.2-.2.1-.5.1-.8.1zM34.8 13.7c-.3 0-.6 0-.8-.1-2.3-.5-3.9-2.9-4.6-4.2-.4.8-1.1 2.1-1.9 2.9-.2.2-.5.2-.7 0-.2-.2-.2-.5 0-.7.7-.7 1.4-2 1.8-2.7.4-.7.5-1 .9-.9.2 0 .4.2.4.4 0 0 1.6 3.9 4.3 4.4 1.4.3 2.9-.5 4.5-2.2.2-.2.5-.2.7 0 .2.2.2.5 0 .7-1.5 1.5-3.1 2.4-4.6 2.4z"></path></g></svg></i>
+                <span>Usos infraestructura</span>
+              </div>
+          </li>
+          <li id="dimmingControls">
+              <div class="content">
+                <i id="dimmingControlsIcon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.8 40" enable-background="new 0 0 27.8 40"><g fill="#fff"><path d="M20.2 23.5h-14.3c-.6 0-1-.4-1.2-.9-.1-.5.2-1.1.7-1.3l14.4-6.5c.4-.2.8-.1 1.1.1.3.2.5.6.5 1v6.5c0 .6-.5 1.1-1.2 1.1zm-8.8-2.4h7.6v-3.5l-7.6 3.5zM6.2 22.3l9-3.5v3.6zM26.3 40h-24.8c-.8 0-1.5-.7-1.5-1.5v-37c0-.8.7-1.5 1.5-1.5h24.8c.8 0 1.5.7 1.5 1.5v37c0 .8-.7 1.5-1.5 1.5zm-23.3-3h21.8v-34h-21.8v34zM1.6 33.8h23.7v4.8h-23.7zM25.2 4.6h-23.7c-.8 0-1.5-.6-1.5-1.5 0-.8.7-1.5 1.5-1.5h23.7c.8 0 1.5.7 1.5 1.5 0 .9-.7 1.5-1.5 1.5z"></path><circle cx="14.6" cy="36.9" r="1.1"></circle></g></svg></i>
+                <span>Contactenos</span>
+              </div>
+          </li>
+        </ol>
+      </div>
+  </article>
+    
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js"></script>
+    <script src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-6e66a25c-d75c-279e-f932-660701c09f45" crossorigin=""></script>
+  
+    <script src="pen.js"></script>
+  </body></html>
